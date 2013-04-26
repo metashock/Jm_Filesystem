@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package packagerversion="1.9.4" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0     http://pear.php.net/dtd/tasks-1.0.xsd     http://pear.php.net/dtd/package-2.0     http://pear.php.net/dtd/package-2.0.xsd">
+ <name>Jm_Filesystem</name>
+ <channel>www.metashock.de/pear</channel>
+ <summary>Framework for file system access</summary>
+ <description>Jm_Filesytem currently provides file system specific exceptions. To be extended</description>
+ <lead>
+  <name>Thorsten Heymann</name>
+  <user>hek2mgl</user>
+  <email>hek2mgl at metashock.net</email>
+  <active>yes</active>
+ </lead>
+ <date>2013-03-04</date>
+ <time>05:09:51</time>
+ <version>
+  <release>$$RELEASE_VERSION$$</release>
+  <api>$$API_VERSION$$</api>
+ </version>
+ <stability>
+  <release>stable</release>
+  <api>stable</api>
+ </stability>
+ <license uri="http://www.opensource.org/licenses/BSD-3-Clause">BSD-3</license>
+ <notes>
+-
+ </notes>
+ <contents>
+  <dir name=".">
+  <dir name="Jm">
+    <dir name="Filesystem">
+      <file name="DirectoryNotBrowsableException.php" role="php" />
+      <file name="DirectoryNotFoundException.php" role="php" />
+      <file name="DirectoryNotBrowsableException.php" role="php" />
+      <file name="Exception.php" role="php" />
+      <file name="FileNotExecutableException.php" role="php" />
+      <file name="FileNotFoundException.php" role="php" />
+      <file name="FileNotReadableException.php" role="php" />
+      <file name="FileNotWritableException.php" role="php" />
+    </dir>
+  </dir>
+  <dir name="doc">
+    <dir name="Jm">
+      <dir name="Filesystem">
+        <file name="README.md" role="doc" />
+      </dir>
+    </dir>
+  </dir>
+  </dir>
+ </contents>
+ <dependencies>
+  <required>
+   <php>
+    <min>5.3.0</min>
+   </php>
+   <pearinstaller>
+    <min>1.4.0</min>
+   </pearinstaller>
+   <package>
+    <name>Jm_Autoloader</name>
+    <channel>www.metashock.de/pear</channel>
+    <min>0.2.2</min>
+   </package>
+  </required>
+ </dependencies>
+ <phprelease />
+</package>
