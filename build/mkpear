@@ -54,8 +54,8 @@ sed -i -e "s/<date>.*<\/date>/<date>`date -u +%Y-%m-%d`<\/date>/" \
 echo "done"
 
 # prepare directory structure
-if [ ! -f "$mydir/pear/Jm/Configuration" ] ; then
-    mkdir "$mydir/pear/Jm/Configuration" -pv
+if [ ! -f "$mydir/pear/Jm/Filesystem" ] ; then
+    mkdir "$mydir/pear/Jm/Filesystem" -pv
 fi
 
 echo -n "Cleanup build directory ..."
@@ -67,8 +67,8 @@ cp -a "$TEMPORARY_CHECKOUT"/lib/php/Jm/* "$mydir"/pear/Jm
 cp -a "$TEMPORARY_CHECKOUT"/tests "$mydir"/pear/
 cp -a "$TEMPORARY_CHECKOUT"/examples "$mydir"/pear/
 
-mkdir -p "$mydir"/pear/doc/Jm/Configuration
-cp "$TEMPORARY_CHECKOUT"/README.md "$mydir"/pear/doc/Jm/Configuration
+mkdir "$mydir"/pear/doc/Jm/Filesystem -p
+cp "$TEMPORARY_CHECKOUT"/README.md "$mydir"/pear/doc/Jm/Filesystem
 echo "done"
 
 # remove temporary checkout
