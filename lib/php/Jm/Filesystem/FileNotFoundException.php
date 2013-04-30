@@ -50,6 +50,6 @@
  * 
  * @package Jm_Filesystem
  */
-class Jm_Filesystem_FileNotFoundException extends Jm_Filesystem_Excepion
+class Jm_Filesystem_FileNotFoundException extends Jm_Filesystem_Exception
 {
 }
