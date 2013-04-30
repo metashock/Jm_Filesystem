@@ -6,8 +6,7 @@ TEMPORARY_CHECKOUT="/tmp/pear_package_build"
 
 # check if there are already tags in git
 # this is required for the PEAR packgage version to be unique
-tags=`git tag`
-if [ -z `git tag` ] ; then
+if [ -z "$(git tag)" ] ; then
     echo "you'll need to create a tag in git first"
     exit 1
 fi
@@ -22,7 +21,7 @@ while [ -z "$version" ] ; do
 
     # check if the input is valid
     # @todo quote for regex
-    if [ -z "$input" ] || [ ! `git tag | grep -e "^$input$"` ] ; then
+    if [ -z "$input" ] || [ ! $(git tag | grep -e "^$input$") ] ; then
         echo "unknown tag $input. try again"
         continue
     fi
@@ -59,13 +58,13 @@ if [ ! -f "$mydir/pear/Jm/Filesystem" ] ; then
 fi
 
 echo -n "Cleanup build directory ..."
-rm -f "$mydir"/pear/Jm/*
+rm -rf "$mydir"/pear/*
 echo "done"
 
 echo -n "Copy files from checkout to build directory ... "
-cp -a "$TEMPORARY_CHECKOUT"/lib/php/Jm/* "$mydir"/pear/Jm
+cp -a "$TEMPORARY_CHECKOUT"/lib/php/* "$mydir"/pear/
 cp -a "$TEMPORARY_CHECKOUT"/tests "$mydir"/pear/
-cp -a "$TEMPORARY_CHECKOUT"/examples "$mydir"/pear/
+#cp -a "$TEMPORARY_CHECKOUT"/examples "$mydir"/pear/
 
 mkdir "$mydir"/pear/doc/Jm/Filesystem -p
 cp "$TEMPORARY_CHECKOUT"/README.md "$mydir"/pear/doc/Jm/Filesystem
